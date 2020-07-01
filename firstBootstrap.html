@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="cinemaBootstrap.css">
+    <title>CoursHtml</title>
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cinémax</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul id="nav" class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link pl-5" href="#">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-5" href="#">Films à l'affiche</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-5" href="#">Informations pratiques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-5" href="#">Nous trouver</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pl-5" href="#">Contact</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+
+    <div class="container-fluid banniere">
+    </div>
+
+    <div class="row titre1 pb-5 pt-5">
+        <div class="col-md-5 offset-5">
+            <h2>Films à l'affiche</h2>
+        </div>
+    </div>
+
+    <div class="container-fluid section2">
+        <div class="row align-items-center pb-5">
+            <div class="col-md-4 pl-5">
+                <img src="image1.png">
+                <p>
+
+                    Moonlight:<br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, laborum ipsa maiores
+                    sint, quos eaque dolor enim itaque unde fugit quod odit facilis rerum aperiam. Sequi veniam fuga
+                    explicabo!<br />
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#modal1">
+                        Reserver sa place
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content" style="width:50em;">
+                                
+                                    <div class="modal-header">
+                                        <h5 class="modal-title modalTitre1" id="modal1">Reserver</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table id="table" class="table table-responsive">
+
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Age</th>
+                                                    <th scope="col">Séances</th>
+                                                    <th scope="col">Quantité</th>
+                                                    <th scope="col">Prix Unitaire :</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody1">
+                                                <tr>
+                                                    <td scope="row">
+                                                        <select name="selectAge"
+                                                            class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                            id="selectAge">
+                                                            <option selected>Age</option>
+                                                            <option value="1">+14</option>
+                                                            <option value="2">-14</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td scope="row">
+                                                        <select name="seances"
+                                                            class="custom-select mb-2 mr-sm-2 mb-sm-0"
+                                                            id="selectSeance">
+                                                            <option selected>Séances</option>
+                                                            <option value="1">Mardi 18 Octobre (14H - 18H)</option>
+                                                            <option value="2">Mercredi 18 octobre (18H - 19h30)</option>
+                                                            <option value="3">Samedi 20 Octobre (Week-End)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td scope="row">
+                                                        <select name="selectQt"
+                                                            class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                            id="quantite">
+                                                            <option selected>0</option>
+                                                            <option  value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                    </td>
+                                                    
+                                                    <td scope="row">
+                                                        <input id="prixU" type="text" name="prixU">
+
+                                                    </td>
+                                                   <td><button onclick="removeElement(this)"
+                                                            class="btn btn-danger">X</button></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <th>TOTAL : <input id="prixT" name="prixT" type="text"></span></th>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="addLines()" class="btn btn-info">Ajouter une
+                                            séance</button>
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Fermer</button>
+
+                                        <button onclick="valide()" class="btn btn-success">Valider</button>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="image2.png">
+                <p>
+                    Fences:<br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, laborum ipsa maiores
+                    sint,
+                    quos eaque dolor enim itaque unde fugit quod odit facilis rerum aperiam. Sequi veniam fuga
+                    explicabo!<br />
+                </p>
+                <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modal1">
+                    Reserver sa place
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="width:50em;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Reserver</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <table class="table table-responsive">
+
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Séances</th>
+                                                <th scope="col">Quantité</th>
+                                                <th scope="col">Prix Unitaire :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody1">
+                                            <tr>
+
+                                                <td scope="row">
+                                                    <select name="selectAge"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                        id="selectAge">
+                                                        <option selected>Age</option>
+                                                        <option value="1">+14</option>
+                                                        <option value="2">-14</option>
+
+                                                    </select>
+                                                </td>
+                                                <td scope="row">
+                                                    <select name="seances"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0"
+                                                        id="selectSeance">
+                                                        <option selected>Séances</option>
+                                                        <option value="1">Mardi 18 Octobre (14H - 18H)</option>
+                                                        <option value="2">Mercredi 18 octobre (18H - 19h30)</option>
+                                                        <option value="3">Samedi 20 Octobre (Week-End)</option>
+                                                    </select>
+                                                </td>
+                                                <td scope="row">
+                                                    <select name="selectQt"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                        id="quantite">
+                                                        <option selected>0</option>
+                                                        <option  value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                </td>
+                                                <td scope="row">
+                                                    <input id="prixU" type="text" name="prixU">
+
+                                                </td>
+                                               <td><button onclick="removeElement(this)"
+                                                        class="btn btn-danger">X</button></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <th>TOTAL : <input id="prixT" name="prixT" type="text"></span></th>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info">Ajouter une séance</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-success">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="image3.png">
+                <p>
+                    Alita:<br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, laborum ipsa maiores
+                    sint,
+                    quos eaque dolor enim itaque unde fugit quod odit facilis rerum aperiam. Sequi veniam fuga
+                    explicabo!</br>
+                </p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+                    Reserver sa place
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="width:50em;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Reserver</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <table class="table table-responsive">
+
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Séances</th>
+                                                <th scope="col">Quantité</th>
+                                                <th scope="col">Prix Unitaire :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody1">
+                                            <tr>
+
+                                                <td scope="row">
+                                                    <select name="selectAge"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                        id="selectAge">
+                                                        <option selected>Age</option>
+                                                        <option value="1">+14</option>
+                                                        <option value="2">-14</option>
+
+                                                    </select>
+                                                </td>
+                                                <td scope="row">
+                                                    <select name="seances"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0"
+                                                        id="selectSeance">
+                                                        <option selected>Séances</option>
+                                                        <option value="1">Mardi 18 Octobre (14H - 18H)</option>
+                                                        <option value="2">Mercredi 18 octobre (18H - 19h30)</option>
+                                                        <option value="3">Samedi 20 Octobre (Week-End)</option>
+                                                    </select>
+                                                </td>
+                                                <td scope="row">
+                                                    <select name="selectQt"
+                                                        class="custom-select mb-2 mr-sm-2 mb-sm-0" 
+                                                        id="quantite">
+                                                        <option selected>0</option>
+                                                        <option  value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                </td>
+                                                <td scope="row">
+                                                    <input id="prixU" type="text" name="prixU">
+
+                                                </td>
+                                               <td><button onclick="removeElement(this)"
+                                                        class="btn btn-danger">X</button></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <th>TOTAL : <input id="prixT" name="prixT" type="text"></span></th>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-success">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid section3">
+        <div class="row pb-5">
+            <div class="col-md-5 offset-5">
+                <h2 class=>Infos pratiques</h2>
+            </div>
+        </div>
+
+        <div class="row pb-5 text-black">
+            <div class="col-md-6">
+
+                <div class="list-group mb-5">
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">1- Salle climatisée</h5>
+                            <small>1</small>
+                        </div>
+                        <p class="mb-1">Le soleil et la chaleur semblent avoir définitivement pris leurs quartiers
+                            d’été... Pour combiner divertissement
+                            et rafraichissement, rendez-vous dans les salles de spectacles climatisées !
+                        </p>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Toutes les salles en IMAX</h5>
+                            <small class="text-muted">2</small>
+                        </div>
+                        <p class="mb-1">Annoncée il y a quelques semaines, la future salle Imax du cinéma Gaumont
+                            Odysseum laissait encore planer quelques doutes sur ses caractéristiques. C’est
+                            désormais confirmé,
+                            elle accueillera l’écran de cinéma le plus grand de France pour un multiplexe.
+                        </p>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Son Digital Prolofic Surround</h5>
+                            <small class="text-muted">3</small>
+                        </div>
+                        <p class="mb-1">"Les phénomènes qui nous entourent sont quasiment tous continus,
+                            c’est-à-dire que lorsque ces phénomènes
+                            sont quantifiables, ils passent d’une valeur à une autre sans discontinuité.
+                        </p>
+
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <table class="table table-hover table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <td rowspan="2"></td>
+                            <th colspan="2">LUNDI au Vendredi</th>
+                            <th rowspan="2">Week-End</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr>
+                            <td rowspan="1"></td>
+                            <th>de 9h à 18h</th>
+                            <th>Soirées</th>
+
+                        </tr>
+                        <tr>
+                            <th>-14ans</th>
+                            <td>5€</td>
+                            <td>6€</td>
+                            <td>6€</td>
+                        </tr>
+                        <tr>
+                            <th>Plein Tarif</td>
+                            <td>10€</td>
+                            <td> 12€</td>
+                            <td>12.50€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="container-fluid section4 pb-5">
+            <div class="row">
+                <div class="col-md-5 offset-5 pt-5 mb-5">
+                    <h2>Retrouvez nous</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                     <iframe class="iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2710.207049454749!2d-1.5729033!3d47.2125309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ec0fcda6c4cb%3A0xd620ca38dafa1e9a!2s2+Rue+La+Motte+Picquet%2C+44100+Nantes!5e0!3m2!1sfr!2sfr!4v1423244007186"
+                        width="600" height="450" frameborder="0"></iframe>
+                </div>
+                <div class="col-md-2 offset-3">
+                    <p>Cinemax</p>
+                    <p>112 allée des termes</p>
+                    <p>34900 Juvignac</p>
+                    <p> Telephone: 06 64 64 85 11</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid bg-dark section5">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-5 offset-5">
+                    <h2>Formulaire de contact</h2>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group ">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control w-100" id="nom" aria-describedby="emailHelp"
+                                placeholder="Nom">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Prenom">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Tél">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+             </div>
+        </div>
+    </div>
+
+
+
+
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
+        <script src="firstBootstrap.js"></script>
+</body>
+
+</html>

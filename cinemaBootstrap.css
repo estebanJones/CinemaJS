@@ -1,0 +1,95 @@
+#navbar
+{
+    height: 5em;
+    font-size: 1.4em;
+
+}
+
+#nav
+{
+    margin-left: 20%;
+}
+.banniere
+{   
+    background-image: url("background1.png");
+    height: 60em;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+img:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.section2
+{
+    background-color: rgb(13, 14, 18);
+    color: aliceblue;
+}
+
+h2
+{
+    color: aliceblue;
+}
+
+.modalTitre1
+{
+    color:black;
+}
+
+.section3
+{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: rgb(57, 66, 68);
+    height: 50%;
+}
+.titre1
+{
+    background-color: rgb(13, 14, 18);
+}
+.section4
+{
+    
+    background-color: rgb(51, 60, 65);
+    color: aliceblue;
+    
+    
+}
+
+.section5
+{
+
+    background-color: rgb(57, 66, 68);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    color: aliceblue;
+}
+
+.row
+{
+    margin-right: 0;
+}
+
+@media screen and (max-width: 1024px)
+{
+    img
+    {
+        width: 90%;
+        height: 70%;
+    }
+
+    .banniere
+    {
+        display: none;
+    }
+
+    iframe
+    {
+        width: 95%;
+    }
+    
+}
